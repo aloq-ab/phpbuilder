@@ -40,3 +40,56 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 
 # Install Sentry CLI
 RUN curl -sL https://sentry.io/get-cli/ | bash
+
+# Install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-configure pdo_dblib --with-libdir=/lib/x86_64-linux-gnu \
+    && pecl install sqlsrv-4.1.6.1 \
+    && pecl install pdo_sqlsrv-4.1.6.1 \
+    && pecl install redis \
+    && pecl install memcached \
+    && pecl install xdebug \
+    && docker-php-ext-install \
+            iconv \
+            mbstring \
+            intl \
+            mcrypt \
+            gd \
+            pgsql \
+            mysqli \
+            pdo_pgsql \
+            pdo_mysql \
+            pdo_dblib \
+            soap \
+            sockets \
+            zip \
+            pcntl \
+            ftp \
+    && docker-php-ext-enable \
+            sqlsrv \
+            pdo_sqlsrv \
+            redis \
+            memcached \
+            opcache \
+            xdebug
+
+
+# Install APCu and APC backward compatibility
+RUN pecl install apcu \
+    && pecl install apcu_bc-1.0.3 \
+    && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
+    && docker-php-ext-enable apc --ini-name 20-docker-php-ext-apc.ini
+
+# Install PHPUnit
+RUN wget https://phar.phpunit.de/phpunit.phar -O /usr/local/bin/phpunit \
+    && chmod +x /usr/local/bin/phpunit \
+    && phpunit --version
+
+# Clean repository
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir --parents /root/.ssh && chmod 700 /root/.ssh
+
+# RUN pecl install xdebug-2.6.1 \
+#    && docker-php-ext-enable xdebug
