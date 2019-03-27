@@ -5,7 +5,7 @@ Docker for building php applications.
 Build on the php:7.1.21-zts-jessie image. 
 
 Includes:
-- SQL
+- PostgreSQL
 - Composer
 - Sentry CLI
 - PHP Xdebug
