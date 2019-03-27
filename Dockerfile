@@ -1,4 +1,4 @@
-FROM php:7.1.27-zts-jessie
+FROM php:7.2.16-zts-alpine3.9
 
 # Get repository and install wget and vim
 RUN apt-get update && apt-get install --no-install-recommends -y \
