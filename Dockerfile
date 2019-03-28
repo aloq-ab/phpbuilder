@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # Install PHP extensions deps
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
-#        postgresql-server-dev-9.5 \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
