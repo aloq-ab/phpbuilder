@@ -1,4 +1,7 @@
-FROM php:7.2.16-fpm
+FROM php:7.2-cli
+
+# Show current php version
+RUN php --version
 
 # Get repository and install wget and vim
 RUN apt-get update && apt-get install --no-install-recommends -y \
