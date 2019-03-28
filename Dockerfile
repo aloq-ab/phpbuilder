@@ -53,7 +53,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     && pecl install redis \
     && pecl install memcached \
     && pecl install xdebug \
-    && pecl install mcrypt \
+    && pecl install channel://pecl.php.net/mcrypt-1.0.2 \
     && docker-php-ext-install \
             #iconv \
             #mbstring \
