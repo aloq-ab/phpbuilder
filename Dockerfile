@@ -1,7 +1,8 @@
 FROM php:7.2-cli
 
 # Show current php version
-RUN php --version
+RUN php --version \
+    && php --modules
 
 # Get repository and install wget and vim
 RUN apt-get update && apt-get install --no-install-recommends -y \
