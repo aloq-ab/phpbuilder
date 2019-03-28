@@ -54,8 +54,8 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     && pecl install memcached \
     && pecl install xdebug \
     && docker-php-ext-install \
-            iconv \
-            mbstring \
+            #iconv \
+            #mbstring \
             intl \
             mcrypt \
             gd \
