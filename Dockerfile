@@ -60,7 +60,10 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
             intl \
             gd \
             pgsql \
-            mysqli \
+            mysqli
+
+# Install more PHP extensions
+RUN docker-php-ext-install \
             pdo_pgsql \
             pdo_mysql \
             pdo_dblib \
@@ -68,8 +71,10 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
             sockets \
             zip \
             pcntl \
-            ftp \
-    && docker-php-ext-enable \
+            ftp
+
+# Enable extensions
+RUN docker-php-ext-enable \
             sqlsrv \
             pdo_sqlsrv \
             redis \
