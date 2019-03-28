@@ -58,7 +58,6 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
             iconv \
             mbstring \
             intl \
-            mcrypt \
             gd \
             pgsql \
             mysqli \
