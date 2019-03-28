@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         gnupg2
 
 # Add PostgreSQL repository
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" > /etc/apt/sources.list.d/pgdg.list
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
-      apt-key add -
+#RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+#RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+#      apt-key add -
 
 # Install PHP extensions deps
 RUN apt-get update \
