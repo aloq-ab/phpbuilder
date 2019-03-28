@@ -26,6 +26,7 @@ RUN apt-get update \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng-dev \
+        libpq-dev \
         zlib1g-dev \
         libicu-dev \
         g++ \
