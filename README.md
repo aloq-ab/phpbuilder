@@ -2,7 +2,7 @@
 
 Docker for building php applications.
 
-Build on the php:7.1.21-zts-jessie image. 
+Build on the php:7.2-cli image. 
 
 Includes:
 - PostgreSQL
