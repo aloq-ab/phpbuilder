@@ -91,7 +91,7 @@ RUN pecl install apcu \
     && docker-php-ext-enable apc --ini-name 20-docker-php-ext-apc.ini
 
 # Install PHPUnit
-RUN wget https://phar.phpunit.de/phpunit.phar -O /usr/local/bin/phpunit \
+RUN wget https://phar.phpunit.de/phpunit-7.phar -O /usr/local/bin/phpunit \
     && chmod +x /usr/local/bin/phpunit \
     && phpunit --version
 
