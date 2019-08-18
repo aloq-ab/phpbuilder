@@ -29,6 +29,7 @@ RUN apt-get update \
         libpq-dev \
         zlib1g-dev \
         libicu-dev \
+        libzip-dev \
         g++ \
         unixodbc-dev \
         libxml2-dev \
