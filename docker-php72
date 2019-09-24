@@ -103,3 +103,5 @@ RUN mkdir --parents /root/.ssh && chmod 700 /root/.ssh
 
 # RUN pecl install xdebug-2.6.1 \
 #    && docker-php-ext-enable xdebug
+
+RUN cat /etc/fstab
