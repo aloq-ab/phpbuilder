@@ -58,7 +58,6 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && pecl install channel://pecl.php.net/mcrypt-1.0.3 \
     && docker-php-ext-install \
             iconv \
-            mbstring \
             intl \
             gd \
             pgsql \
